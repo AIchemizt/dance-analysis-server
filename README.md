@@ -111,7 +111,7 @@ The application is deployed on AWS using a serverless container orchestration pa
 
 This architecture is secure, scalable, and cost-effective, as resources are only consumed when the task is running.
 
-**Public Endpoint URL:** `http://dance-analysis-lb-1218962309.us-east-1.elb.amazonaws.com`
+**Public Endpoint URL:** <http://dance-analysis-lb-1218962309.us-east-1.elb.amazonaws.com>
 
 -----
 
