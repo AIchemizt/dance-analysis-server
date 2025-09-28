@@ -95,6 +95,7 @@ The server returns a JSON object summarizing the analysis, including the total f
   },
   "total_frames": 1460
 }
+```
 
 ## Cloud Deployment Architecture
 The application is deployed on AWS using a serverless container orchestration pattern.
