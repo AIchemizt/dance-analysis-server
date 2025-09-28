@@ -76,8 +76,7 @@ The server exposes a single endpoint for video analysis.
 Use this command from your terminal to test the running server with a sample video.
 
 ```sh
-curl -X POST -F "video=@/path/to/your/video.mp4" http://localhost:8080/analyze
-```
+curl -X POST -F "video=@/path/to/your/video.mp4" http://localhost:8080/analyze ```
 
 
 ### Example Success Response (200 OK)
