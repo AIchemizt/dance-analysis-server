@@ -1,10 +1,10 @@
 ````markdown
 # Dance Movement Analysis Server
 
-### A Cloud--Native AI/ML Service for Real-Time Pose Detection
+### A Cloud-Native AI/ML Service for Real-Time Pose Detection
 
-**Author:** Abhishek
-**Repository:** [https://github.com/AIchemizt/dance-analysis-server](https://github.com/AIchemizt/dance-analysis-server)
+**Author:** Abhishek  
+**Repository:** https://github.com/AIchemizt/dance-analysis-server.git
 
 ---
 
@@ -18,24 +18,24 @@ The entire application is built with a production-first mindset, leveraging Dock
 
 ## Key Features
 
-* **AI-Powered Pose Detection:** Utilizes Google's MediaPipe library to accurately detect 33 different body keypoints in each video frame.
-* **Specific Pose Recognition:** Includes logic to identify standard poses, with a current implementation for detecting the "T-Pose". The architecture is modular, allowing for easy addition of more pose detectors.
-* **RESTful API:** A simple and robust API built with Flask accepts video uploads (`multipart/form-data`) and returns structured JSON results.
-* **Containerized & Portable:** Fully containerized with Docker, ensuring consistent behavior across development and production environments.
-* **Scalable Cloud Deployment:** Deployed on AWS ECS with Fargate, allowing the service to automatically scale based on demand without managing underlying servers.
-* **Unit Tested:** Core analysis logic is validated with unit tests using `pytest` to ensure reliability and accuracy.
+- **AI-Powered Pose Detection:** Utilizes Google's MediaPipe library to accurately detect 33 different body keypoints in each video frame.
+- **Specific Pose Recognition:** Includes logic to identify standard poses, with a current implementation for detecting the "T-Pose". The architecture is modular, allowing for easy addition of more pose detectors.
+- **RESTful API:** A simple and robust API built with Flask accepts video uploads (`multipart/form-data`) and returns structured JSON results.
+- **Containerized & Portable:** Fully containerized with Docker, ensuring consistent behavior across development and production environments.
+- **Scalable Cloud Deployment:** Deployed on AWS ECS with Fargate, allowing the service to automatically scale based on demand without managing underlying servers.
+- **Unit Tested:** Core analysis logic is validated with unit tests using `pytest` to ensure reliability and accuracy.
 
 ---
 
 ## Tech Stack
 
-* **Backend:** Python 3.11, Flask
-* **AI / ML:** MediaPipe, OpenCV, NumPy
-* **Server:** Gunicorn with Gevent workers
-* **Containerization:** Docker
-* **Cloud Provider:** Amazon Web Services (AWS)
-* **Deployment Service:** AWS ECS with Fargate & Application Load Balancer
-* **CI/CD Tooling:** AWS CLI
+- **Backend:** Python 3.11, Flask  
+- **AI / ML:** MediaPipe, OpenCV, NumPy  
+- **Server:** Gunicorn with Gevent workers  
+- **Containerization:** Docker  
+- **Cloud Provider:** Amazon Web Services (AWS)  
+- **Deployment Service:** AWS ECS with Fargate & Application Load Balancer  
+- **CI/CD Tooling:** AWS CLI  
 
 ---
 
@@ -43,22 +43,24 @@ The entire application is built with a production-first mindset, leveraging Dock
 
 To run this project on your local machine, ensure you have Docker installed.
 
-1.  **Clone the repository:**
-    ```sh
-    git clone https://github.com/AIchemizt/dance-analysis-server.git
-    cd dance-analysis-server
-    ```
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/AIchemizt/dance-analysis-server.git
+   cd dance-analysis-server
+````
 
-2.  **Build the Docker image:**
-    ```sh
-    docker build -t dance-analysis-server .
-    ```
+2. **Build the Docker image:**
 
-3.  **Run the Docker container:**
-    This will start the server on `http://localhost:8080`.
-    ```sh
-    docker run -p 8080:8080 dance-analysis-server
-    ```
+   ```sh
+   docker build -t dance-analysis-server .
+   ```
+
+3. **Run the Docker container:**
+   This will start the server on `http://localhost:8080`.
+
+   ```sh
+   docker run -p 8080:8080 dance-analysis-server
+   ```
 
 ---
 
@@ -69,16 +71,17 @@ The server exposes a single endpoint for video analysis.
 * **Endpoint:** `/analyze`
 * **Method:** `POST`
 * **Request Body:** `multipart/form-data`
-    * **Key:** `video`
-    * **Value:** The video file you want to analyze (e.g., `my_dance.mp4`).
+
+  * **Key:** `video`
+  * **Value:** The video file you want to analyze (e.g., `my_dance.mp4`).
 
 ### Example `curl` Request
 
-Use this command from your terminal to test the running server with a sample video.
+Use this command from your terminal to test the running server with a sample video:
 
 ```sh
 curl -X POST -F "video=@/path/to/your/video.mp4" http://localhost:8080/analyze
-````
+```
 
 ### Example Success Response (200 OK)
 
@@ -98,23 +101,24 @@ The server returns a JSON object summarizing the analysis, including the total f
 }
 ```
 
------
+---
 
 ## Cloud Deployment Architecture
 
 The application is deployed on AWS using a serverless container orchestration pattern.
 
-  * **ECR (Elastic Container Registry):** The Docker image is stored in a private ECR repository.
-  * **ECS (Elastic Container Service):** An ECS Task Definition specifies the Docker image, CPU, and memory requirements.
-  * **Fargate:** The task runs on Fargate, a serverless compute engine, so we don't need to manage EC2 instances.
-  * **ALB (Application Load Balancer):** An ALB receives public traffic on port 80 and routes it to the running container's port 8080. It also handles health checks using the `/health` endpoint.
-  * **ECS Service:** The service ensures that the specified number of tasks is always running and connects it to the ALB. It's configured for rolling updates to ensure zero-downtime deployments.
+* **ECR (Elastic Container Registry):** The Docker image is stored in a private ECR repository.
+* **ECS (Elastic Container Service):** An ECS Task Definition specifies the Docker image, CPU, and memory requirements.
+* **Fargate:** The task runs on Fargate, a serverless compute engine, so we don't need to manage EC2 instances.
+* **ALB (Application Load Balancer):** An ALB receives public traffic on port 80 and routes it to the running container's port 8080. It also handles health checks using the `/health` endpoint.
+* **ECS Service:** The service ensures that the specified number of tasks is always running and connects it to the ALB. It's configured for rolling updates to ensure zero-downtime deployments.
 
 This architecture is secure, scalable, and cost-effective, as resources are only consumed when the task is running.
 
-**Public Endpoint URL:** `http://dance-analysis-lb-1218962309.us-east-1.elb.amazonaws.com`
+**Public Endpoint URL:**
+[http://dance-analysis-lb-1218962309.us-east-1.elb.amazonaws.com](http://dance-analysis-lb-1218962309.us-east-1.elb.amazonaws.com)
 
------
+---
 
 ## Thought Process and Vision
 
@@ -124,5 +128,4 @@ The Python code is structured in a modular way, separating the core analysis log
 
 For Callus Company, this architecture provides a strong and flexible foundation. The current T-Pose detection can be expanded to a library of dozens of standard dance poses (e.g., arabesque, plié, pirouette). The JSON output can be fed into a frontend application to provide dancers with real-time feedback or used for advanced analytics to track a dancer's progress over time. The scalable nature of the deployment means the system can handle a growing user base, from a few dancers to a global community, without requiring manual intervention to provision new servers. This project serves as a solid proof-of-concept for a much larger and more feature-rich platform.
 
-```
 ```
