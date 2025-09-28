@@ -1,4 +1,3 @@
-````markdown
 # Dance Movement Analysis Server
 
 ### A Cloud-Native AI/ML Service for Real-Time Pose Detection
@@ -123,6 +122,3 @@ My approach to this task was to build a solution that is not just functional but
 The Python code is structured in a modular way, separating the core analysis logic (`analyzer/process.py`) from the web server (`server.py`). This separation of concerns makes the code easier to maintain, test, and extend. For example, adding new pose detection functions would only require modifying the `process.py` file without touching the API layer, which is critical for rapid feature development. The inclusion of unit tests with `pytest` further ensures the reliability of the core logic.
 
 For Callus Company, this architecture provides a strong and flexible foundation. The current T-Pose detection can be expanded to a library of dozens of standard dance poses (e.g., arabesque, plié, pirouette). The JSON output can be fed into a frontend application to provide dancers with real-time feedback or used for advanced analytics to track a dancer's progress over time. The scalable nature of the deployment means the system can handle a growing user base, from a few dancers to a global community, without requiring manual intervention to provision new servers. This project serves as a solid proof-of-concept for a much larger and more feature-rich platform.
-
-```
-```
