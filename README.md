@@ -1,10 +1,10 @@
 ````markdown
 # Dance Movement Analysis Server
 
-### A Cloud-Native AI/ML Service for Real-Time Pose Detection
+### A Cloud--Native AI/ML Service for Real-Time Pose Detection
 
 **Author:** Abhishek
-**Repository:** https://github.com/AIchemizt/dance-analysis-server
+**Repository:** [https://github.com/AIchemizt/dance-analysis-server](https://github.com/AIchemizt/dance-analysis-server)
 
 ---
 
@@ -45,7 +45,7 @@ To run this project on your local machine, ensure you have Docker installed.
 
 1.  **Clone the repository:**
     ```sh
-    git clone [https://github.com/AIchemizt/dance-analysis-server.git](https://github.com/AIchemizt/dance-analysis-server.git)
+    git clone https://github.com/AIchemizt/dance-analysis-server.git
     cd dance-analysis-server
     ```
 
