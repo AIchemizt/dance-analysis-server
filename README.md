@@ -3,7 +3,7 @@
 ### A Cloud-Native AI/ML Service for Real-Time Pose Detection
 
 **Author:** Abhishek
-**Repository:** [PASTE YOUR GITHUB REPOSITORY URL HERE]
+**Repository:** https://github.com/AIchemizt/dance-analysis-server.git
 
 ---
 
@@ -44,7 +44,7 @@ To run this project on your local machine, ensure you have Docker installed.
 
 1.  **Clone the repository:**
     ```sh
-    git clone [PASTE YOUR GITHUB REPOSITORY URL HERE]
+    git clone https://github.com/AIchemizt/dance-analysis-server.git
     cd dance-analysis-server
     ```
 
