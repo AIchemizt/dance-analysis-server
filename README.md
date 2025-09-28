@@ -78,9 +78,12 @@ Use this command from your terminal to test the running server with a sample vid
 ```sh
 curl -X POST -F "video=@/path/to/your/video.mp4" http://localhost:8080/analyze
 
-Example Success Response (200 OK)
+
+### Example Success Response (200 OK)
+
 The server returns a JSON object summarizing the analysis, including the total frames processed and a dictionary of detected poses with the frame numbers where they appeared.
 
+```json
 {
   "detected_poses": {
     "T-Pose": [
@@ -93,7 +96,7 @@ The server returns a JSON object summarizing the analysis, including the total f
   "total_frames": 1460
 }
 
-Cloud Deployment Architecture
+## Cloud Deployment Architecture
 The application is deployed on AWS using a serverless container orchestration pattern.
 
 ECR (Elastic Container Registry): The Docker image is stored in a private ECR repository.
