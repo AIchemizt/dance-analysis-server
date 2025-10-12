@@ -1,6 +1,18 @@
-Flask==3.1.2
-mediapipe==0.10.18
-opencv-python-headless==4.11.0.86
-gunicorn>=22.0.0
-numpy>=1.21.0,<2.0
-gevent>=22.0.0
+# Web framework
+Flask==3.0.2
+Werkzeug==3.0.1
+
+# Production WSGI server
+gunicorn==21.2.0
+gevent==23.9.1
+
+# Computer vision and ML
+mediapipe==0.10.9
+opencv-python-headless==4.9.0.80
+
+# Numerical computing
+numpy==1.26.4
+
+# Testing
+pytest==8.0.2
+pytest-cov==4.1.0
